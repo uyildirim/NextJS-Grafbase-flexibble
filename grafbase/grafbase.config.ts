@@ -1,21 +1,27 @@
-// g is a schema generator, config the final object to return
 import { g, config } from "@grafbase/sdk";
 
-// types are generated with the `type` method,
-// followed by the name and fields.
-const profile = g.type("Profile", {
-  address: g.string(),
+const User = g.model("User", {
+  name: g.string().length({ min: 2, max: 20 }),
+  email: g.string().unique(),
+  avatarUrl: g.url(),
+  description: g.string().optional(),
+  githubUrl: g.url().optional(),
+  linkedInUrl: g.url().optional(),
+  projects: g
+    .relation(() => Project)
+    .list()
+    .optional(),
 });
 
-// models can be generated with the `model` method
-const user = g.model("User", {
-  name: g.string(),
-  age: g.int().optional(),
-  profile: g.ref(profile).optional(),
-  parent: g.relation(() => user).optional(),
+const Project = g.model("Project", {
+  title: g.string().length({ min: 2, max: 20 }),
+  description: g.string(),
+  image: g.url(),
+  liveSiteUrl: g.url(),
+  githubUrl: g.url(),
+  category: g.string().search(),
+  createdBy: g.relation(() => User),
 });
-
-// finally we export the default config
 export default config({
   schema: g,
 });
