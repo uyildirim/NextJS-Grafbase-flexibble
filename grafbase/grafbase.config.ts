@@ -7,7 +7,6 @@ const User = g.type("User", {
   description: g.string(),
   githubUrl: g.url().optional(),
   linkedinUrl: g.url().optional(),
-  projects: g.ref(Project),
 });
 
 const Project = g.type("Project", {
