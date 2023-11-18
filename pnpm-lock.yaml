@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@grafbase/sdk': ^0.9.1
+  '@grafbase/sdk': ^0.0.25
   '@headlessui/react': ^1.7.17
   '@types/jsonwebtoken': ^9.0.5
   '@types/node': ^20
@@ -31,7 +31,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@grafbase/sdk': 0.9.1
+  '@grafbase/sdk': 0.0.25
   '@types/node': 20.9.1
   '@types/react': 18.2.37
   '@types/react-dom': 18.2.15
@@ -54,8 +54,8 @@ packages:
       regenerator-runtime: 0.14.0
     dev: false
 
-  /@grafbase/sdk/0.9.1:
-    resolution: {integrity: sha512-YlEibJSLdxzRMD0tStjd88AumH6liQ8SM2SOWr19JT55XkVlfx2qCS+MSmA+eNZnoOPqSrTDr1F5MC7OIAbKpw==}
+  /@grafbase/sdk/0.0.25:
+    resolution: {integrity: sha512-VF5jSVRdv574g9D51pOwSTEDGCfY8XNdLvSdr6b4DH4LyyO147AXKDY9mO1OI5RXT7JJHSTNEzQhpBCWas543w==}
     engines: {node: '>=16.13.0'}
     dependencies:
       dotenv: 16.3.1
